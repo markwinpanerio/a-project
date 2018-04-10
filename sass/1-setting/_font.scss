@@ -1,0 +1,31 @@
+$font-productsans: 'ProductSans', sans-serif;
+
+@font-face {
+    font-family: 'Lato';
+    font-weight: 500;
+    font-style: normal;
+    src: url($path-font + 'ProductSans.eot');
+    src: url($path-font + 'ProductSans.otf') format('otf'),
+         url($path-font + 'ProductSans.ttf') format('truetype'),
+         url($path-font + 'ProductSans.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Lato';
+    font-weight: 300;
+    font-style: normal;
+    src: url($path-font + 'LatProductSans.eot');
+    src: url($path-font + 'LatProductSans.otf') format('otf'),
+         url($path-font + 'LatProductSans.ttf') format('truetype'),
+         url($path-font + 'LatProductSans.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Lato';
+    font-weight: normal;
+    font-style: normal;
+    src: url($path-font + 'LaProductSans.eot');
+    src: url($path-font + 'LaProductSans.otf') format('otf'),
+         url($path-font + 'LaProductSans.ttf') format('truetype'),
+         url($path-font + 'LaProductSans.woff') format('woff');
+}

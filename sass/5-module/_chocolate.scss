@@ -1,0 +1,96 @@
+.chocolate {
+    width: 100%;
+    height: 100%;
+    background: #8b43b7;
+    position: relative;
+
+    &-wrapper {
+        width: 500px;
+        height: 500px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        transform: translateY(-50%);
+    }
+
+    &-cup {
+        width: 450px;
+        height: 450px;
+        border-radius: 100%;
+        background: #fff;
+        border: 10px solid #c7c7c6;
+        position: relative;
+
+        &-inner {
+            width: 380px;
+            height: 380px;
+            border-radius: 100%;
+            background: #5e4237;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            transform: translateY(-50%);
+            border: 15px solid #c7c7c6;
+            box-shadow: inset 0px 9px 0 6px #4e362a;
+
+            &:before {
+                content: '';
+                display: block;
+                width: 320px;
+                height: 300px;
+                border-radius: 100%;
+                border-top: 0px solid transparent;
+                border-left: 0px solid transparent;
+                border-bottom: 10px solid #a07163;
+                border-right: 0px solid transparent;
+                position: absolute;
+                bottom: 22px;
+                right: 14px;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+
+    &-marshmallow {
+        width: 44px;
+        height: 82px;
+        border-radius: 20px;
+        background: $color-white;
+        position: absolute;
+        top: 105px;
+        left: 120px;
+        transform: rotate(30deg);
+
+        &:before {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 40px;
+            border-radius: 100%;
+            position: absolute;
+            top: -5px;
+            left: 1px;
+            border-top: 0px solid transparent;
+            border-left: 0px solid transparent;
+            border-bottom: 4px solid #f1f1f1;
+            border-right: 0px solid transparent;
+        }
+
+        &--two {
+            top: 161px;
+            left: 213px;
+            transform: rotate(-37deg);
+            height: 70px;
+            width: 44px;
+
+            &:before {
+                width: 38px;
+                height: 38px;
+            }
+        }
+    }
+}

@@ -1,0 +1,796 @@
+.menu {
+    $this: &;
+
+    width: 100px;
+    height: 100px;
+    position: relative;
+
+    &:hover {
+        cursor: pointer;
+
+        #{$this}-helper {
+            opacity: 1;
+        }
+
+    }
+
+    &-item {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        margin: 0 20px;
+    }
+
+    &-helper {
+        opacity: 0;
+        width: 200px;
+        height: 50px;
+        background: $color-default;
+        position: absolute;
+        left: 130px;
+        top: 10px;
+        border-radius: 20px;
+        box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.25);
+        transition: opacity 0.3s ease-in-out;
+
+        &:before {
+            content: "";
+            display: block;
+            border-top: 20px solid transparent;
+            border-left: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-right: 20px solid $color-default;
+            position: absolute;
+            left: -30px;
+            top: 5px;
+        }
+
+    }
+
+    &-top,
+    &-middle,
+    &-bottom {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 10px;
+        background: $color-default;
+        border-radius: 10px;
+        opacity: 1;
+        transition: all 0.3s ease-in-out;
+    }
+
+    &-top {
+        top: 0px;
+
+        &.is-active {
+            transform: rotate(-45deg);
+            top: 30px;
+        }
+    }
+
+    &-middle {
+        top: 20px;
+
+        &.is-active {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+    }
+
+    &-bottom {
+        top: 40px;
+
+        &.is-active {
+            transform: rotate(45deg);
+            top: 12px;
+        }
+    }
+
+    &-two {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        top: -77px;
+
+        &:hover {
+            cursor: pointer;
+        }
+        &-top,
+        &-middle-one,
+        &-middle-two,
+        &-bottom {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 10px;
+            background: $color-default;
+            border-radius: 10px;
+            opacity: 1;
+            transition: all 0.3s ease-in-out;
+        }
+
+        &-top {
+            top: 0px;
+
+            &.is-active {
+                transform: rotate(-45deg);
+                top: 30px;
+            }
+        }
+
+        &-middle {
+
+            &-one {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+                top: 20px;
+                float: left;
+                width: 50px;
+
+                &.is-active {
+                    opacity: 0;
+                    transform: translateX(-50px);
+                }
+            }
+
+            &-two {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                top: 17px;
+                display: inline-block;
+                width: 50px;
+
+                &.is-active {
+                    opacity: 0;
+                    transform: translateX(50px);
+                }
+            }
+
+            &.is-active {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+        }
+
+        &-bottom {
+            top: 34px;
+
+            &.is-active {
+                transform: rotate(45deg);
+                top: 6px;
+            }
+        }
+    }
+
+    &-three {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        top: -61px;
+
+        &:hover {
+            cursor: pointer;
+        }
+        &-top-one,
+        &-top-two,
+        &-middle-one,
+        &-middle-two,
+        &-bottom-one,
+        &-bottom-two {
+            position: relative;
+            left: 0;
+            display: block;
+            height: 10px;
+            background: $color-default;
+            border-radius: 10px;
+            opacity: 1;
+            transition: all 0.3s ease-in-out;
+        }
+
+        &-top {
+
+            &-one,
+            &-two {
+                width: 50px;
+            }
+
+            &-one {
+                top: 6px;
+                float: left;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+
+                &.is-active {
+                    transform: rotate(45deg);
+                    top: 15px;
+                    left: 10px;
+                }
+
+            }
+
+            &-two {
+                display: inline-block;
+                top: 3px;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+
+                &.is-active {
+                    transform: rotate(-45deg);
+                    top: 12px;
+                    left: -11px;
+                }
+
+            }
+
+        }
+
+        &-middle {
+
+            &-one {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+                top: 20px;
+                float: left;
+                width: 50px;
+
+                &.is-active {
+                    opacity: 0;
+                    transform: translateX(-50px);
+                }
+            }
+
+            &-two {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                top: 17px;
+                display: inline-block;
+                width: 50px;
+
+                &.is-active {
+                    opacity: 0;
+                    transform: translateX(50px);
+                }
+            }
+
+        }
+
+        &-bottom {
+
+            &-one,
+            &-two {
+                width: 50px;
+            }
+
+            &-one {
+                float: left;
+                top: 34px;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+
+                &.is-active {
+                    transform: rotate(-45deg);
+                    top: 16px;
+                    left: 6px;
+                }
+
+            }
+
+            &-two {
+                display: inline-block;
+                top: 31px;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+
+                &.is-active {
+                    transform: rotate(45deg);
+                    top: 12px;
+                    left: -8px;
+                }
+
+            }
+        }
+    }
+
+    &-four {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        left: 0;
+        top: -9px;
+        transform: rotate(0);
+        transition: all 0.6s ease-in-out;
+
+        &.is-active {
+            transform: rotate(180deg);
+
+            &:hover {
+                left: 20px;
+            }
+
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &-top,
+        &-middle,
+        &-bottom {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 10px;
+            background: $color-default;
+            border-radius: 10px;
+            opacity: 1;
+            transition: all 0.3s ease-in-out;
+        }
+
+        &-top {
+            top: 10px;
+            left: 0;
+
+            &.is-active {
+                transform: rotate(-45deg);
+                top: 26px;
+                left: 20px;
+                width: 50px;
+            }
+        }
+
+        &-middle {
+            top: 30px;
+            left: 0;
+
+            &.is-active {
+                width: 75px;
+                transform: translateX(26px);
+            }
+        }
+
+        &-bottom {
+            top: 50px;
+            left: 0;
+
+            &.is-active {
+                transform: rotate(45deg);
+                top: 35px;
+                left: 21px;
+                width: 50px;
+            }
+        }
+    }
+
+    &-five {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        right: 0;
+        top: -8px;
+        transform: rotate(0);
+        transition: all 0.6s ease-in-out;
+
+        &.is-active {
+            transform: rotate(180deg);
+
+            &:hover {
+                right: 20px;
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &-top,
+        &-middle,
+        &-bottom {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 10px;
+            background: $color-default;
+            border-radius: 10px;
+            opacity: 1;
+            transition: all 0.6s ease-in-out;
+        }
+
+        &-top {
+            top: 10px;
+            left: 0;
+
+            &.is-active {
+                transform: rotate(45deg);
+                top: 26px;
+                left: 31px;
+                width: 50px;
+            }
+        }
+
+        &-middle {
+            top: 30px;
+            left: 0;
+
+            &.is-active {
+                width: 75px;
+            }
+        }
+
+        &-bottom {
+            top: 50px;
+            left: 0;
+
+            &.is-active {
+                transform: rotate(-45deg);
+                top: 35px;
+                left: 31px;
+                width: 50px;
+            }
+        }
+    }
+
+    &-six {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        left: 0;
+        top: -58px;
+        transform: rotate(0);
+        transition: all 0.6s ease-in-out;
+
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &-top-one,
+        &-top-two,
+        &-middle,
+        &-bottom-one,
+        &-bottom-two {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 10px;
+            background: $color-default;
+            border-radius: 10px;
+            opacity: 1;
+            transition: all 0.6s ease-in-out;
+        }
+
+        &-top {
+            top: 10px;
+            left: 0;
+
+            &-one {
+                float:left;
+                width: 25px;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+
+                &.is-active {
+                    box-shadow: 0px 0px 10px 0px #a7a7a7;
+                }
+            }
+
+            &-two {
+                display: inline-block;
+                width: 75px;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                top: -3px;
+
+                &.is-active {
+                    background: $color-white;
+                    box-shadow: inset 0px 0px 3px 2px rgba(255, 0, 0, 0.34);
+
+                    &:before {
+                        display: block;
+                        content: "";
+                        width: 75px;
+                        height: 10px;
+                        position: relative;
+                        top: 0px;
+                        left: 0px;
+                        border-radius: 10px;
+                        background: transparent;
+                        box-shadow: 0px 0px 10px 3px rgba(255, 0, 0, 0.34);
+                    }
+                }
+
+            }
+
+        }
+
+        &-middle {
+            top: 15px;
+            left: 0;
+
+            &.is-active {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+        }
+
+        &-bottom {
+
+            &-one {
+                top: 33px;
+                float:left;
+                width: 25px;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+
+                &.is-active {
+                    box-shadow: 0px 0px 10px 0px #a7a7a7;
+                }
+
+            }
+
+            &-two {
+                top: 30px;
+                display: inline-block;
+                width: 75px;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+
+                &.is-active {
+                    background: $color-white;
+                    box-shadow: inset 0px 0px 3px 2px rgba(0, 16, 206, 0.57);
+
+                    &:before {
+                        display: block;
+                        content: "";
+                        width: 75px;
+                        height: 10px;
+                        position: relative;
+                        top: 0px;
+                        left: 0px;
+                        border-radius: 10px;
+                        background: transparent;
+                        box-shadow: 0px 0px 10px 3px rgba(0, 16, 206, 0.32);
+                    }
+
+                }
+            }
+        }
+
+        &-saber-one {
+            position: relative;
+            top: 0;
+            transform: rotate(0);
+            transition: all 0.6s ease-in-out;
+
+            &.is-active {
+                transform: rotate(-45deg);
+                top: 35px;
+            }
+
+        }
+
+        &-saber-two {
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: rotate(0);
+            transition: all 0.6s ease-in-out;
+
+            &.is-active {
+                transform: rotate(-135deg);
+                top: 28px;
+                left: -17px;
+            }
+
+        }
+
+    }
+
+    &-seven {
+        width: 100px;
+        position: relative;
+        top: -14px;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &-box {
+            position: relative;
+            left: 0;
+            top: 0;
+            right: 0;
+            display: inline-block;
+            height: 30px;
+            width: 30px;
+            transform: rotate(0);
+            background: $color-default;
+            transition: left 0.3s ease-in-out,
+                        top 0.3s ease-in-out,
+                        transform 0.3s ease-in-out;
+
+            &:nth-child(1) {
+                &.is-active {
+                    transform: rotate(45deg);
+                }
+            }
+
+            &:nth-child(2) {
+                &.is-active {
+                    transform: rotate(45deg);
+                    position: relative;
+                    left: -18px;
+                    top: 16px;
+                }
+            }
+
+            &:nth-child(3) {
+                &.is-active {
+                    transform: rotate(-45deg);
+                }
+            }
+
+            &:nth-child(4) {
+                &.is-active {
+                    transform: rotate(45deg);
+                    position: relative;
+                    left: 15px;
+                    top: 18px;
+                }
+            }
+
+            &:nth-child(5) {
+                &.is-active {
+                    transform: rotate(45deg);
+                }
+            }
+
+            &:nth-child(6) {
+                &.is-active {
+                    transform: rotate(-45deg);
+                    position: relative;
+                    left: -15px;
+                    top: -18px;
+                }
+            }
+
+            &:nth-child(7) {
+                &.is-active {
+                    transform: rotate(45deg);
+                }
+            }
+
+            &:nth-child(8) {
+                &.is-active {
+                    transform: rotate(-45deg);
+                    position: relative;
+                    left: 18px;
+                    top: -16px;
+                }
+            }
+
+            &:nth-child(9) {
+                &.is-active {
+                    transform: rotate(45deg);
+                }
+            }
+
+        }
+    }
+
+    &-eight {
+        width: 100px;
+        position: relative;
+        top: -14px;
+        transition: width 0.3s ease-in-out;
+
+        &.is-active {
+            width: 90px;
+            
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &-box {
+            position: relative;
+            left: 0;
+            top: 0;
+            right: 0;
+            display: inline-block;
+            height: 30px;
+            width: 30px;
+            transform: rotate(0);
+            background: $color-default;
+            transition: all 0.3s ease-in-out;
+
+            &:nth-child(1) {
+                &.is-active {
+                    width: 20px;
+                    height: 20px;
+                    transform: rotate(45deg);
+                    top: -15px;
+                }
+            }
+
+            &:nth-child(2) {
+                &.is-active {
+                    width: 20px;
+                    height: 20px;
+                    transform: rotate(45deg);
+                    top: -2px;
+                    left: -11px;
+                }
+            }
+
+            &:nth-child(3) {
+                &.is-active {
+                    width: 20px;
+                    height: 20px;
+                    transform: rotate(45deg);
+                    top: -15px;
+                }
+            }
+
+            &:nth-child(4) {
+                &.is-active {
+                    width: 20px;
+                    height: 20px;
+                    transform: rotate(45deg);
+                    top: -2px;
+                    left: 12px;
+                }
+            }
+
+            &:nth-child(5) {
+                &.is-active {
+                    width: 20px;
+                    height: 20px;
+                    transform: rotate(45deg);
+                    top: -14px;
+                }
+            }
+
+            &:nth-child(6) {
+                &.is-active {
+                    width: 20px;
+                    height: 20px;
+                    transform: rotate(45deg);
+                    top: -26px;
+                    left: -12px;
+                }
+            }
+
+            &:nth-child(7) {
+                &.is-active {
+                    width: 20px;
+                    height: 20px;
+                    transform: rotate(45deg);
+                    top: -13px;
+                }
+            }
+
+            &:nth-child(8) {
+                &.is-active {
+                    width: 20px;
+                    height: 20px;
+                    transform: rotate(45deg);
+                    top: -26px;
+                    left: 13px;
+                }
+            }
+
+            &:nth-child(9) {
+                &.is-active {
+                    width: 20px;
+                    height: 20px;
+                    transform: rotate(45deg);
+                    top: -15px;
+                }
+            }
+
+        }
+    }
+
+}
